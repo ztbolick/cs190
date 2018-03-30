@@ -1,26 +1,16 @@
-/* Filename: PSA5.java
- * Created by: Zac Bolick
- *
- * Date:
- *
- * Description: This class is designed to take six images as input and 
- * return a collage in the porm of a picure object
- *
+/**
+ * Auto Generated Java Class.
  */
+import java.awt.Color;
 
-	import java.awt.Color;
-
-public class PSA5 {
-
+public class Derp {
   public static void main(String[] args) { 
-
-  	// make a bunch of picture objects
-	Picture p1 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/background.jpg");
-	Picture p2 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/lawnmower.jpg");
-	Picture p3 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/eagle.jpg");
-	Picture p4 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/eagle2.jpg");
-	Picture p5 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/lady.jpg");
-	Picture p6 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/burger.jpg");
+	Picture p1 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/a.jpg");
+	Picture p2 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/b.jpg");
+	Picture p3 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/c2.jpg");
+	Picture p4 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/d.jpg");
+	Picture p5 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/f.jpg");
+	Picture p6 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/e.jpg");
 	
 	Picture collage = new Picture(684,504);
 	
@@ -52,7 +42,12 @@ public class PSA5 {
 		for (int x1 = 0, x2 = 0; x2 < p3.getWidth(); x1++, x2++) {
 			sourcePix = p3.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-			targetPix.setColor(sourcePix.getColor());
+			if (sourcePix.getColor() == blue) {
+				System.out.println("yey");
+			} else {
+				targetPix.setColor(sourcePix.getColor());
+				//System.out.println("boo");
+			}
 		}
 	}
 
@@ -75,8 +70,8 @@ public class PSA5 {
 	}
 
 	// copy forth image
-	for (int y1 = 0, y2 = 0; y2 < p6.getHeight(); y1++, y2++) {
-		for (int x1 = 0, x2 = 0; x2 < p6.getWidth(); x1++, x2++) {
+	for (int y1 = 10, y2 = 0; y2 < p6.getHeight(); y1++, y2++) {
+		for (int x1 = 26, x2 = 0; x2 < p6.getWidth(); x1++, x2++) {
 			sourcePix = p6.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
 			targetPix.setColor(sourcePix.getColor());
