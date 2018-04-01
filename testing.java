@@ -17,11 +17,11 @@ public class testing {
 	Color blue = new Color (0, 0, 254);
 
 
-	for (int i = 0; i < p1.getHeight(); i++) {
-		for (int j = 0; j < p1.getWidth(); j++) {
-			Pixel OGPix = p1.getPixel(i, j);
-			Pixel NGPix = p2.getPixel(i, j);
-			if (NGPix.getColor() == blue) {
+	for (int y = 0; y < p1.getHeight(); y++) {
+		for (int x = 0; x < p1.getWidth(); x++) {
+			Pixel OGPix = p1.getPixel(x, y);
+			Pixel NGPix = p2.getPixel(x, y);
+			if (OGPix.getBlue() > 250) {
 				NGPix.setColor(green);
 			} else {
 				NGPix.setColor(red);

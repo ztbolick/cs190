@@ -8,13 +8,13 @@
  *
  */
 
-	import java.awt.Color;
+ import java.awt.Color;
 
 public class PSA5 {
 
   public static void main(String[] args) { 
 
-  	// make a bunch of picture objects
+	// make a bunch of picture objects
 	Picture p1 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/background.jpg");
 	Picture p2 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/lawnmower.jpg");
 	Picture p3 = new Picture("/Users/ztbolick/Documents/Code/cs190/PSA5/resources/eagle.jpg");
@@ -26,10 +26,8 @@ public class PSA5 {
 	
 	Pixel sourcePix = null;
 	Pixel targetPix = null;
-
-	Color blue = new Color(0, 0, 255);
 	
-	// Copy the first image as background
+	// Copy first
 	for (int y = 0; y < p1.getHeight(); y++) {
 		for (int x =0; x < p1.getWidth(); x++) {
 			sourcePix = p1.getPixel(x, y);
@@ -43,7 +41,11 @@ public class PSA5 {
 		for (int x1 = 459, x2 = 0; x2 < p2.getWidth(); x1++, x2++) {
 			sourcePix = p2.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-			targetPix.setColor(sourcePix.getColor());
+				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
+				} 
+				else {
+				targetPix.setColor(sourcePix.getColor());
+				}
 		}
 	}
 
@@ -52,7 +54,11 @@ public class PSA5 {
 		for (int x1 = 0, x2 = 0; x2 < p3.getWidth(); x1++, x2++) {
 			sourcePix = p3.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-			targetPix.setColor(sourcePix.getColor());
+				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
+				} 
+				else {
+				targetPix.setColor(sourcePix.getColor());
+				}
 		}
 	}
 
@@ -61,25 +67,37 @@ public class PSA5 {
 		for (int x1 = 500, x2 = 0; x2 < p4.getWidth(); x1++, x2++) {
 			sourcePix = p4.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-			targetPix.setColor(sourcePix.getColor());
+				if (sourcePix.getBlue() > 180 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
+				} 
+				else {
+				targetPix.setColor(sourcePix.getColor());
+				}
 		}
 	}
 
-	// copy forth image
+	// copy five image
 	for (int y1 = 325, y2 = 0; y2 < p5.getHeight(); y1++, y2++) {
 		for (int x1 = 250, x2 = 0; x2 < p5.getWidth(); x1++, x2++) {
 			sourcePix = p5.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-			targetPix.setColor(sourcePix.getColor());
+				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 20 && sourcePix.getGreen() < 20) {
+				} 
+				else {
+				targetPix.setColor(sourcePix.getColor());
+				}
 		}
 	}
 
-	// copy forth image
+	// copy sixth image
 	for (int y1 = 0, y2 = 0; y2 < p6.getHeight(); y1++, y2++) {
 		for (int x1 = 0, x2 = 0; x2 < p6.getWidth(); x1++, x2++) {
 			sourcePix = p6.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-			targetPix.setColor(sourcePix.getColor());
+				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
+				} 
+				else {
+				targetPix.setColor(sourcePix.getColor());
+				}
 		}
 	}
 	
