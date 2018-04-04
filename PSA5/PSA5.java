@@ -41,9 +41,7 @@ public class PSA5 {
 		for (int x1 = 459, x2 = 0; x2 < p2.getWidth(); x1++, x2++) {
 			sourcePix = p2.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
-				} 
-				else {
+				if !(sourcePix.getBlue() < 240 && sourcePix.getRed() > 16 && sourcePix.getGreen() > 16) {
 				targetPix.setColor(sourcePix.getColor());
 				}
 		}
@@ -54,11 +52,9 @@ public class PSA5 {
 		for (int x1 = 0, x2 = 0; x2 < p3.getWidth(); x1++, x2++) {
 			sourcePix = p3.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
-				} 
-				else {
+				if !(sourcePix.getBlue() < 240 && sourcePix.getRed() > 16 && sourcePix.getGreen() > 16) {
 				targetPix.setColor(sourcePix.getColor());
-				}
+				} 
 		}
 	}
 
@@ -67,9 +63,7 @@ public class PSA5 {
 		for (int x1 = 500, x2 = 0; x2 < p4.getWidth(); x1++, x2++) {
 			sourcePix = p4.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-				if (sourcePix.getBlue() > 180 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
-				} 
-				else {
+				if !(sourcePix.getBlue() > 180 && sourcePix.getRed() > 16 && sourcePix.getGreen() > 16) {
 				targetPix.setColor(sourcePix.getColor());
 				}
 		}
@@ -80,9 +74,7 @@ public class PSA5 {
 		for (int x1 = 250, x2 = 0; x2 < p5.getWidth(); x1++, x2++) {
 			sourcePix = p5.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 20 && sourcePix.getGreen() < 20) {
-				} 
-				else {
+				if !(sourcePix.getBlue() < 240 && sourcePix.getRed() < 20 && sourcePix.getGreen() < 20) {
 				targetPix.setColor(sourcePix.getColor());
 				}
 		}
@@ -93,9 +85,7 @@ public class PSA5 {
 		for (int x1 = 0, x2 = 0; x2 < p6.getWidth(); x1++, x2++) {
 			sourcePix = p6.getPixel(x2, y2);
 			targetPix = collage.getPixel(x1, y1);
-				if (sourcePix.getBlue() > 240 && sourcePix.getRed() < 16 && sourcePix.getGreen() < 16) {
-				} 
-				else {
+				if !(sourcePix.getBlue() < 240 && sourcePix.getRed() > 16 && sourcePix.getGreen() > 16) {
 				targetPix.setColor(sourcePix.getColor());
 				}
 		}

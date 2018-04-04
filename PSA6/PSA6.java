@@ -35,7 +35,15 @@ public class PSA6 {
 			Pixel target = collage.getPixel (x, y);
 			target.setColor(source.getColor());	
 		}
-	}	
+	}
+
+	for (int y = 300, y2 = 0; y2 < me.getHeight(); y++, y2++) {
+		for (int x = 600, x2 = 0; x2 < me.getWidth(); x++, x2++) {
+			Pixel source = me.getPixel (x2, y2); 
+			Pixel target = collage.getPixel (x, y);
+			target.setColor(source.getColor());
+		}
+	}
 
 	collage.explore();
   }
