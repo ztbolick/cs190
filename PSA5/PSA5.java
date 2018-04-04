@@ -1,10 +1,11 @@
 /* Filename: PSA5.java
  * Created by: Zac Bolick
+ * CSIDL: 5701490
  *
- * Date:
+ * Date: 4/4/18
  *
- * Description: This class is designed to take six images as input and 
- * return a collage in the porm of a picure object
+ * Description: This PSA is designed to use a static method createCollage to make a collage
+ * this is returned as a picture object
  *
  */
 
@@ -28,7 +29,7 @@ public class PSA5 {
     p3.exposure(-8);
     p5.mirrorVertical();
     
-    
+    // Call static method
     Picture.createCollage(p1,p2,p3,p4,p5,p6, p7);
     
   }
