@@ -196,9 +196,7 @@ public class Picture extends SimplePicture
           targetPix.setColor(sourcePix.getColor());
         }
       }
-    }
-        
-    collage.explore();
+    } 
     return collage;    
   }
   
@@ -215,7 +213,7 @@ public class Picture extends SimplePicture
     {
       for(int x = 0; x < this.getWidth() - 5; x++)
       {
-      	// Designate pixels for modification indexed n, n+2, n+4
+       // Designate pixels for modification indexed n, n+2, n+4
         Pixel p = this.getPixel(x,y);
         Pixel p2 = this.getPixel(x + 2,y);
         Pixel p3 = this.getPixel(x + 4,y);
@@ -298,11 +296,11 @@ public class Picture extends SimplePicture
     Pixel leftPixel = null;
     Pixel rightPixel = null;
     
-    // loopthroughtherows
+    // loop through the rows
     for(int y = 0;y < getHeight(); y++)
     {
       // loop from 1 to just before the mirrorpoint
-      for(int x=1; x < mirrorPoint; x++)
+      for(int x = 1; x < mirrorPoint; x++)
       {
         leftPixel = this.getPixel((mirrorPoint - x), y);
         rightPixel = this.getPixel((mirrorPoint + x), y);
