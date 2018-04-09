@@ -16,22 +16,25 @@ public class PSA6 {
     
     // make a bunch of picture objects
     Picture bg = new Picture("./resources/landscape.jpg");
-    Picture stang = new Picture("./resources/stang-sized.jpg"); 
-    Picture me = new Picture("./resources/side-view-green1.jpg");
+    Picture stang = new Picture("./resources/stang-sized-1.jpg"); 
+    Picture me = new Picture("./resources/me2.jpg");
     Picture pattern = new Picture ("./resources/pattern.jpg");
+    Picture peopleRunning = new Picture ("./resources/business_people_running.jpg");
+    Picture businessGuy = new Picture ("./resources/business-man-running.jpg");
+    Picture healthBar = new Picture ("./resources/healthbar.jpg");
     Picture collage = new Picture(1184, 501);
     
-    Color customBlue = new Color (0,0, 115);
+    Color customBlue = Color.BLUE;
+    Color customGreen = Color.GREEN;
     
-    bg.chromakeyGreen(175, stang, 600*2, 273*2);
-    bg.chromakeyGreen(175, me, 1615, 570);
-    me.chromakeyBlue(20, pattern, 0, 0, customBlue);
-    me.explore();
-    //bg.explore();
+    bg.chromakeyGreen(175, stang, 1200, 546, customGreen);
+    bg.chromakeyBlue(180, peopleRunning, 252, 526, customBlue);
+    bg.chromakeyBlue(170, businessGuy, 2200, 624, customBlue);
+    bg.chromakeyGreen(170, healthBar, 1700, 50, customGreen);
+    pattern.chromakeyBlue(100, me, 0, 0, customBlue);
+    bg.chromakeyGreen(150, pattern, 1550+25-3, 525+10+3, customGreen);
     
     
-    
-    
-    
+    bg.explore();
   }
 }

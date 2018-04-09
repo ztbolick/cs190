@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.text.*;
 import java.util.*;
 import java.util.List; // resolves problem with java.awt.List and java.util.List
+import java.awt.Color;
 
 /**
  * A class that represents a picture.  This class inherits from 
@@ -69,11 +70,12 @@ public class Picture extends SimplePicture
     super(image);
   }
   
+  
   ////////////////////// methods ///////////////////////////////////////
   
   /**
    * Method to return a string with information about this picture.
-   * @return a string with information about the picture such as fileName,
+   * return a string with information about the picture such as fileName,
    * height and width.
    */
   public String toString()
@@ -85,6 +87,39 @@ public class Picture extends SimplePicture
     
   }
   
+  public void chromakeyGreen (int threshholdGreen, Picture sauce, int startX, int startY, Color customColor) {
+    for (int x = 0, x2 = startX; x < sauce.getWidth(); x++, x2++) {
+      for (int y = 0, y2 = startY; y < sauce.getHeight(); y++, y2++) {
+        Pixel targetPix = this.getPixel(x2, y2);
+        Pixel saucePix = sauce.getPixel(x, y);
+        if (saucePix.colorDistance(customColor) > threshholdGreen) {
+          targetPix.setColor(saucePix.getColor());
+        }
+      }
+    }
+  }
+  
+  public void chromakeyBlue (int threshholdBlue, Picture sauce, int startX, int startY, Color customColor) {
+    for (int x = 0, x2 = startX; x < sauce.getWidth(); x++, x2++) {
+      for (int y = 0, y2 = startY; y < sauce.getHeight(); y++, y2++) {
+        Pixel targetPix = this.getPixel(x2, y2);
+        Pixel saucePix = sauce.getPixel(x, y);
+        if (saucePix.colorDistance(customColor) > threshholdBlue) {
+          targetPix.setColor(saucePix.getColor());
+        }
+      }
+    }
+  }
+ 
+  public void copyPic (Picture sauce, int startX, int startY) {
+    for (int x = 0, x2 = startX; x < sauce.getWidth(); x++, x2++) {
+      for (int y = 0, y2 = startY; y < sauce.getHeight(); y++, y2++) {
+        Pixel targetPix = this.getPixel(x2, y2);
+        Pixel saucePix = sauce.getPixel(x, y);
+          targetPix.setColor(saucePix.getColor());
+        }
+      }
+    }  
   
   public static void main(String[] args) 
   {
@@ -92,94 +127,4 @@ public class Picture extends SimplePicture
     Picture pictObj = new Picture(fileName);
     pictObj.explore();
   }
-  
-  
-  /*
-   * This method creates a collage of seven images!
-   * all paramaters are pictures and below is a breif description of their location in the final collage
-   * @param1 background image
-   * @param2 top left
-   * @param3 bottom left
-   * @param4 bottom right
-   * @param5 bottom middle
-   * @param6 bottom left
-   * @param7 top right
-   */
-  
-  public static Picture createCollage (Picture bg, Picture stang,
-                                       Picture me) {
-    
-    Picture collage = new Picture(684,504);
-    
-    Pixel sourcePix = null;
-    Pixel targetPix = null;
-    
-    // Copy the Background
-    for (int y = 0; y < collage.getHeight(); y++) {
-      for (int x = 0; x < collage.getWidth(); x++) {
-        Pixel source = bg.getPixel (x, y); 
-        Pixel target = collage.getPixel (x, y);
-        target.setColor(source.getColor()); 
-      }
-    }
-    
-    // Copy stang
-    for (int y = 280, y2 = 0; y2 < stang.getHeight(); y++, y2++) {
-      for (int x = 585, x2 = 0; x2 < stang.getWidth(); x++, x2++) {
-        Pixel source = stang.getPixel (x2, y2); 
-        Pixel target = collage.getPixel (x, y);
-        target.setColor(source.getColor()); 
-      }
-    }
-    
-    // copy me
-    for (int y = 296, y2 = 0; y2 < me.getHeight(); y++, y2++) {
-      for (int x = 813, x2 = 0; x2 < me.getWidth(); x++, x2++) {
-        Pixel source = me.getPixel (x2, y2); 
-        Pixel target = collage.getPixel (x, y);
-        target.setColor(source.getColor());
-      }
-    }
-    
-    collage.explore();
-    return collage;    
-  }
-  
-  
-  
-  
-  
-  public void chromakeyGreen(int threshholdGreen, Picture sauce) {
-    
-    // Copy first image: background
-    for (int y = 0; y < this.getHeight(); y++) {
-      for (int x =0; x < this.getWidth(); x++) {
-        // Make some pixels for the copying
-        Pixel targetPix = this.getPixel(x,y);
-        Pixel saucePix = sauce.getPixel(x,y);
-        // find some color ranges
-        if (saucePix.colorDistance(Color.GREEN) > threshholdGreen) {
-          targetPix.setColor(sourcePix.getColor());
-        }
-      }
-    }
-  }
-  
-  public void chromakeyBlue(int threshholdBlue, Picture sauce) {
-    
-    // Copy first image: background
-    for (int y = 0; y < this.getHeight(); y++) {
-      for (int x =0; x < this.getWidth(); x++) {
-        // Make some pixels for the copying
-        Pixel targetPix = this.getPixel(x,y);
-        Pixel saucePix = sauce.getPixel(x,y);
-        // find some color ranges
-        if (saucePix.colorDistance(Color.BLUE) > threshholdBlue) {
-          targetPix.setColor(sourcePix.getColor());
-        }
-      }
-    }
-  }
-  
-  
 }
