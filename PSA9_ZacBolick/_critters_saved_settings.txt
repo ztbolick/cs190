@@ -1,0 +1,12 @@
+#CSE 142 Critters saved settings
+#Thu May 03 09:22:07 PDT 2018
+Bear=true
+Height=50
+Olympian=false
+Number\ of\ each\ critter=25
+Network\ features=true
+Tiger=true
+Lion=true
+Debug\ output=false
+Width=60
+Zombie=true

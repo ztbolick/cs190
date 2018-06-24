@@ -1,0 +1,12 @@
+/**
+ * Auto Generated Java Class.
+ */
+public class FitnessClubs {
+  
+  
+  public static void main(String[] args) { 
+   Gym PB = new Gym();
+   
+   System.out.println(PB.getHours());
+  }
+}

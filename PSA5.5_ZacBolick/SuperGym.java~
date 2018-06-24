@@ -1,0 +1,32 @@
+public class SuperGym extends ActiveGym() {
+	super()
+	private towels;
+	private pool;
+	private squatRacks;
+
+	public SuperGym() {
+		pool = true;
+		towels = true;
+		squatRacks = true;
+	}
+
+	public boolean getTowels () {
+		return towels;
+	}
+	public boolean getPool () {
+		return pool;
+	}
+	public boolean getSquatRacks () {
+		return squatRacks;
+	}
+	public setTowels (boolean towels) {
+		this.towels = towels;
+	}
+	public setPool (boolean pool) {
+		this.pool = pool;
+	}
+	public setSquatRacks (boolean squatRacks) {
+		this.squatRacks = squatRacks;
+	}
+	
+}
